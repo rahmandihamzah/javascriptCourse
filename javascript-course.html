@@ -8,6 +8,9 @@
     <title>Javascript - beginer tp expert</title>
 
     <script>
+        /*
+        Section 4 (Variables)
+        */
         var abc;
         var $abc;
         let xyz;
@@ -24,10 +27,12 @@
         console.log($abc);
         console.log(xyz);
         console.log(x);
+        //-----------------------------------------------------------------------------------------------
 
 
-
-        // data type
+        /*
+        Section 5 (Data Types)
+        */
 
         var name = "purnomo soetopo"; // string
         var houseNo = 204; // number
@@ -53,10 +58,13 @@
         console.log(personalInfo.lastName);
 
         console.log(fruits[0]);
+        // -----------------------------------------------------------------------------------------------
 
 
 
-        // operators
+        /*
+        Section 6 (Operators)
+        */
 
         // aritmathic operator
         var no1 = 20;
@@ -222,8 +230,6 @@
         console.log("Reminder value of aoa: " + (aoa %= 2));
 
 
-
-
         // COnditional Operators
         /*
         example:
@@ -261,11 +267,14 @@
         ? - means if
         : - means else
         */
+        // -----------------------------------------------------------------------------------------------------
 
 
 
+        /*
+        section 7 (Function)
+        */
 
-        // Function
         /*
         function is a set of reusable code which can be called anywhere in your program.
         it's design to perform some specific tasks. when you have some common or repeat task
@@ -294,20 +303,157 @@
         console.log("Sum is: " + mySum);
 
         function doCalculation(no1, no2, op) {
-            if (op = "+") {
+            if (op == '+') {
                 return no1 + no2;
-            } else if (op = "*") {
+            } else if (op == '*') {
                 return no1 * no2;
-            } else if (op = "/") {
+            } else if (op == '/') {
                 return no1 / no2;
             }
         }
         var doSum = doCalculation(10, 20, "+");
         var doMul = doCalculation(10, 20, "*");
-        var doDiv = doCalculation(10, 20, "/");
+        var doDiv = doCalculation(50, 10, "/");
         console.log("Sum is: " + doSum);
         console.log("Mul is: " + doMul);
         console.log("Div is: " + doDiv);
+        //or
+        function doCalculation(no3, no4, opt) {
+            if (opt == '+') {
+                console.log("Sum: " + (no3 + no4));
+            } else if (opt == '*') {
+                console.log("Mul: " + (no3 * no4));
+            } else if (opt == '/') {
+                console.log("Div: " + (no3 / no4));
+            }
+        }
+        doCalculation(20, 30, '+');
+        // --------------------------------------------------------------------------------------------------------
+
+
+        /*
+        Object
+        */
+        /*
+        Example
+        var myCar = {
+            brand:"BMW",
+            color:"Orange",
+            Type:"sport"
+        };
+
+        How to call or use it?
+        var carBrand = myCar,brand;
+        alert(myCar.color)
+        */
+        var myCar = {
+            brand: "BMW",
+            color: "Orange",
+            Type: "sport"
+        };
+        console.log("my car name is: " + myCar.brand);
+        console.log("my car color is: " + myCar.color);
+        // alert("my car type: " + myCar.Type);
+        //-------------------------------------------------------------------------------------------------------
+
+
+
+        /*
+        Section 9 (Array)
+        */
+        /*
+        Method                       Description
+        concat(): Join two or more arrays and return the new arrays
+        filter(): Extract the elements of arrays that satisfied spesific condition and give you new set of result. it doesn't change the original
+        find(): returns first element of given array upon satisfied specific conditions
+        join(): It returns the array element in string format
+        length(): returns the total number of element in array
+        pop(): remove LAST elements of array and return the result
+        shift(): Remove FIRST elements of array and return the result
+        push(): To add a new element to array at the end of the array
+        reverse(): Reverse the order of array elements
+        slice(): Select the part of array and return as new set of array
+        splice(): Add/Removes items from original array
+        map(): Create new result array by calling a custom function on each items in the parent array
+        */
+        //concat
+        var fruits = ["Apple", "Banana", "Orange", "Kiwi"];
+        var moreFruits = ["Blackberry"];
+        console.log("first element is: " + fruits[2]);
+        console.log("new list of fruits: " + fruits.concat(moreFruits));
+
+        //filter
+        var arrNos = [12, 58, 45, 78, 96, 55, 44, 20, 89, 99, 100];
+        var oddNos = arrNos.filter(getOddNos);
+        var evenNos = arrNos.filter(getEvenNos);
+
+        function getOddNos(nos) {
+            return ((nos % 2) != 0);
+        }
+
+        function getEvenNos(nos) {
+            return ((nos % 2) == 0);
+        }
+
+        console.log("Odd Nos: " + oddNos);
+        console.log("Even Nos: " + evenNos);
+
+        //find
+        function find50(nos) {
+            return (nos > 50);
+        }
+
+        var findNo50 = arrNos.find(find50);
+        console.log("Number greater than 50: " + findNo50);
+
+        //or
+
+        findNo50 = arrNos.find(function (nos) {
+            return (nos > 50);
+        })
+        console.log("Number greater than 50: " + findNo50)
+
+        //join
+        console.log("string Array eith Join: " + arrNos.join());
+
+        //kength
+        console.log("Total Elements in Array: " + arrNos.length);
+
+        //pop
+        arrNos.pop();
+        console.log("Array after Pop: " + arrNos);
+
+        //shift
+        arrNos.shift();
+        console.log("Array after Shift: " + arrNos);
+
+        //push
+        arrNos.push(999);
+        console.log("Array after Push: " + arrNos);
+
+        //reverse
+        console.log("Reverse Element: " + arrNos.reverse());
+
+        //slice
+        var arrNos2 = [12, 58, 45, 78, 96, 55, 44, 20, 89, 99, 100];
+        console.log("Original Elements: " + arrNos2);
+        console.log("First 5 Elements: " + arrNos2.slice(0, 5));
+
+        //splice
+        console.log("Removed Elements: " + arrNos2.splice(2, 2, 250, 300, 700));
+        // arrayName.splice(indexKeN-1, jumlahYangMauDiSplice, elementPengganti, elementPengganti, ...., elementPengganti)
+        console.log("Updated Array: " + arrNos2);
+
+        //map
+        var arrNos3 = [12, 58, 45, 78, 96, 55, 44, 20, 89, 99, 100];
+
+        function doDouble(no) {
+            return (no * 2);
+        }
+
+        var doubleVal = arrNos3.map(doDouble);
+        console.log("Map Double Result: " + doubleVal);
+        console.log("Original Array: " + arrNos3);
     </script>
 </head>
 
