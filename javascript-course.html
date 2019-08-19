@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Javascript - beginer tp expert</title>
+
+    <script>
+        var abc;
+        var $abc;
+        let xyz;
+        // const
+        // const x; // wrong
+        const x = "check"; // right
+
+        abc = 123456;
+        $abc = "hi there..!"
+        xyz = "Welcome to learn-and-share"
+        // x = "check" // error becouse x(const)
+
+        console.log(abc);
+        console.log($abc);
+        console.log(xyz);
+        console.log(x);
+
+
+
+        // data type
+
+        var name = "purnomo soetopo"; // string
+        var houseNo = 204; // number
+        var isAvailable = true; // boolean
+        var opq; // undefined
+        var abc = null; // null
+
+        var personalInfo = {
+            firstName: "purnomo",
+            lastName: "soetopo"
+        }; // object
+
+        var fruits = ["Apple", "Banana", "Orange", "Kiwi"];
+        // index    0         1         2        3
+
+        console.log(name);
+        console.log(houseNo);
+        console.log(isAvailable);
+        console.log(opq);
+        console.log(abc);
+
+        console.log(personalInfo.firstName);
+        console.log(personalInfo.lastName);
+
+        console.log(fruits[0]);
+
+
+
+        // operators
+
+        // aritmathic operator
+        var no1 = 20;
+        var no2 = 5;
+
+        var sum = no1 - no2;
+        console.log("sum of no1 + no2 : " + sum);
+
+        var subs = no1 + no2;
+        console.log("substraction: " + subs);
+
+        var multi = no1 * no2;
+        console.log("Multiplication of no1 and no2: " + multi);
+
+        var div = no1 / no2;
+        console.log("Division of no1 / no2: " + div);
+
+        var mod = no1 % no2;
+        console.log("Modulus of no1 % no2: " + mod);
+
+        var newNo1;
+        newNo1 = no1++;
+        console.log(newNo1);
+
+        var newNo2;
+        newNo2 = no2--;
+        console.log(newNo2);
+
+        no1--;
+        console.log(no1);
+
+        no2++;
+        console.log(no2);
+
+        //Comparation operator
+        // == equal to
+        // === equal to value and type
+        // != not equal to
+        // > greater than
+        // < less then
+        // >= greater than or equal to
+        // <= less than equal to
+
+        var a = 8;
+        var b = 6;
+
+        console.log("a == b: " + (a == b));
+        console.log("a === b: " + (a === b));
+        console.log("b > a : " + (b > a));
+        console.log("a < c :" + (a < b));
+        console.log("a != b :" + (a != b));
+        console.log("a <= b : " + (a <= b));
+        console.log("a >= b" + (b >= a));
+
+        var str1 = "hi";
+        var str2 = "hii";
+        console.log("str1 != str2 : " + (str1 != str2));
+
+
+        // Logical operator
+
+        /*
+        && operator when it returns true or false
+        true && false == false
+        true && true == true
+        false && false == false
+        false && true == false
+
+        || operator when it returns true or false
+        true || true == true
+        true || false == true
+        false || false == false
+        false || true == true
+        */
+
+        /*
+        var a = 20;
+        var b = 5;
+
+        Operator: &&
+        Description: AND
+        Example: (a > 10 && b < 5)
+        Result (output): false
+
+        Operator: ||
+        Description: OR
+        Example: (a > 10 || b > 10 )
+        Result (output): true
+
+        Operator: !
+        Description: NOT
+        Example: !(a == b)
+        Result (output): true
+
+        note:
+        in javascript, if find following types of data, it automatically converts as false
+        - Zero (var x = 0)
+        - Null (var x = null)
+        - Undefined (var x)
+        - Empty (var x = "")
+        */
+
+        var xx = 20;
+        var yy = 15;
+
+        console.log("xx > 10 and xx < 100: " + (xx > 10 && xx < 100));
+
+        if (xx > 0 && yy < 50) {
+            console.log("Yes all is well");
+        }
+
+        if (xx && yy) {
+            console.log("xx and yy has some value");
+        }
+
+        var xxx = 0;
+        var yyy = 15;
+        console.log("xxx or yyy is greater than 10? " + (xxx > 10 || yyy > 10));
+
+        var ax = 7;
+        var ay = 7;
+        console.log("ax is not equal to ay: " + (!(ax == ay)));
+
+        var xa = !true;
+        var ya = !'';
+        console.log("what is xa? " + xa); //false
+        console.log("what is ya? " + ya); //true
+
+
+
+        // Assignment Operator
+        /*
+        operator & syntax: =
+        example: a = 10
+        description: value 10 assigned to variable a
+
+        operator & syntax: +=
+        example: a += 10
+        description: add to value of a. it's similar to a = a+10
+
+        operator & syntax: -=
+        example: a -= 10
+        description: substraction 10 from the value of a. it's similar to a = a-10
+
+        operator & syntax: *= 
+        example: a *= 10
+        description: multiplication a by 10. it's similar to a = a * 10
+
+        operator & syntax: /=
+        example: a /= 10
+        description: devide a by 10. it's similar to a = a/10
+
+        operator & syntax: %=
+        example: a %= 10
+        description: assigned a reminder value to a. it's similar to a = a%10
+        */
+
+        var aoa = 10;
+        console.log("Addition to aoa: " + (aoa += 10));
+        console.log("Subs. to aoa by 5: " + (aoa -= 5));
+        console.log("Multi. to aoa by 3: " + (aoa *= 2));
+        console.log("Division to aoa by 5: " + (aoa /= 5));
+        console.log("Reminder value of aoa: " + (aoa %= 2));
+
+
+
+
+        // COnditional Operators
+        /*
+        example:
+        var name = "Chirag"
+        if(name == "Chirag") alert ("HI Chirag");
+
+        if you eant to execute more than one statement, you need to use curly brace:
+        if (name == "Chirag")
+        {
+            alert ("Hi Chirag")
+            alert ("How are you today?")
+        }
+
+        "if else" clause:
+        var name = "Chirag"
+        if(name == "Chirag"){
+            alert("Hi Chirag")
+        }else if(name == "Deep"){
+            alert("Hi Deep")
+        }else{
+            alert("Hey, You are stranger..")
+        }
+
+        another conditional operators:
+        - it's also called ternary oerator
+        syntax:
+        variableName = (condition) ? valueTrue : valueFalse;
+        example 1:
+        var gender = "male"
+        var salute = (gender == "male") ? "Mr" : "Miss"
+        example 2:
+        var age = 15
+        var message = (age >= 18) ? "You are adult" : "you are younger"
+        note:
+        ? - means if
+        : - means else
+        */
+
+
+
+
+        // Function
+        /*
+        function is a set of reusable code which can be called anywhere in your program.
+        it's design to perform some specific tasks. when you have some common or repeat task
+        to perform based on different inputs, we can use funcion. so youu don't need to code
+        multi-tier for same type of operation.
+
+        syntax:
+        function functionName(para1, para2){
+
+        }
+
+        example:
+        calculation of two values through function by passing numbers.
+
+        function doMultiplication(num1, num2){
+            var result = mul1 * mul2;
+            return result; //here our function will stop execute further code
+        }
+        doMultiplication(15, 4); //return 60
+        */
+        function doSum(no1, no2) {
+            var doSum = no1 + no2;
+            return doSum;
+        }
+        var mySum = doSum(10, 150);
+        console.log("Sum is: " + mySum);
+
+        function doCalculation(no1, no2, op) {
+            if (op = "+") {
+                return no1 + no2;
+            } else if (op = "*") {
+                return no1 * no2;
+            } else if (op = "/") {
+                return no1 / no2;
+            }
+        }
+        var doSum = doCalculation(10, 20, "+");
+        var doMul = doCalculation(10, 20, "*");
+        var doDiv = doCalculation(10, 20, "/");
+        console.log("Sum is: " + doSum);
+        console.log("Mul is: " + doMul);
+        console.log("Div is: " + doDiv);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
