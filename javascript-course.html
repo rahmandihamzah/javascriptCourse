@@ -454,6 +454,231 @@
         var doubleVal = arrNos3.map(doDouble);
         console.log("Map Double Result: " + doubleVal);
         console.log("Original Array: " + arrNos3);
+        //----------------------------------------------------------------------------------------------------
+
+
+
+
+        /*
+        Section 10 : Date
+        */
+        /*
+        Followings are the constructor to be used to create a date object
+        - Date()
+        - Date(milliseconds)
+        - Date(year, month, day, hours, minutes, seconds, milliseconds)
+        - Date(dateString)
+
+        Date object also give us below useful method which display date in proper readable strinds:
+        .toDateString();
+        .toTimeString();
+        .toLocaleDateString();
+        .toLocaleString();
+        .toLocaleTimeString();
+        .toUTCString();
+
+        Method                           Description
+        - getDate(): Returns the day (between 1 to 31) of the Mounth according to local time
+        - getDAy(): Returns the day of the week (between 0 to 6) of the week according to local time
+        - getFullYear(): Returns the current year of local time (e.g. 2019)
+        - getHours(): Returns the value between 0 to 23 basis on local time
+        - getMinutes(): Returns the value between 0 to 59 basis on local time
+        - getSeconds(): Returns the value between 0 to 59 basis on local time
+        - getMonth: Returns the value between 0 to 11 basis on local time
+        - setDate(): Sets the day of the month to a date object
+        - setFullYear(): Sets the year to the date object
+        - setHour(): Sets the Hour to the date object
+        */
+        var currDate = new Date();
+        console.log("current date: " + currDate);
+        console.log("day of the month: " + currDate.getDate());
+        console.log("get day of the week: " + currDate.getDay());
+        console.log("get year: " + currDate.getFullYear());
+        console.log("current hours: " + currDate.getHours());
+        console.log("current minutes: " + currDate.getMinutes());
+        console.log("get seconds: " + currDate.getSeconds());
+        console.log("get the month: " + (currDate.getMonth()));
+
+        console.log("date string: " + currDate.toDateString());
+        console.log("time string: " + currDate.toTimeString());
+        console.log("local date string: " + currDate.toLocaleDateString());
+        console.log("local string: " + currDate.toLocaleString());
+        console.log("local time string: " + currDate.toLocaleTimeString());
+        console.log("UTC String: " + currDate.toUTCString());
+
+        currDate.setMonth(10);
+        console.log("date with new month: " + currDate);
+
+        currDate.setHours(6);
+        console.log("date with new hour: " + currDate);
+        //-----------------------------------------------------------------------------------------------
+
+
+
+
+
+        /*
+        Section 11 : Math
+        */
+        /*
+        Method                         Description
+        - abs(): Returns absolute (positive) value of given number
+        - ceil(): Round a number to it's nerest upward integer. example: 12.32 returns 13
+        - floor(): Round a number to it's nearest downward intger. example: 12.32 returns 12
+        - max(3, 8, 4): Returns the value of highest number from given number list
+        - min(4, 2, 5, 7): Returns the value of lowest number from given number list
+        - pow(2, 3): Returns the value of 2 to the power of 3 (return 8)
+        - rendom(): Returns the ramdom number between 0 to 1 (1 is not included)
+        - round(): Round a number to nearest integer. example: 23.50 returns 24
+        */
+        console.log("Absolute: " + Math.abs(15));
+        console.log("Ceil no: " + Math.ceil(12.43));
+        console.log("Floor no: " + Math.floor(12.43));
+        console.log("Max no: " + Math.max(22, 57, 36, 89, 105, 45));
+        console.log("Min  no: " + Math.min(22, 57, 36, 89, 105, 45));
+        console.log("Power no: " + Math.pow(2, 3));
+        console.log("Random no: " + Math.random());
+        console.log("round no: " + Math.round(23.20));
+
+        var arrNum = new Array(12, 25, 87, 56, 25, 87, 45, 99);
+        var arrFruits = new Array("Apple", "Banana", "Orange", "Kiwi");
+        var arrNumLen = arrNum.length;
+        var randArrNum = Math.floor(Math.random() * arrNumLen);
+        console.log("Random number: " + randArrNum + "array length: " + arrNumLen);
+        console.log("Random Array value is: " + arrNum[randArrNum]);
+        console.log("Random Array Fruits: " + arrFruits[randArrNum]);
+        //---------------------------------------------------------------------------------------------
+
+
+
+
+        /*
+        Section 12 : Statements
+        */
+        /*
+        Statment                            Description
+        - if...else...else if: Execute the code/section upon certain conditions. If condition true it execute the code.
+                                if condition is not true, check for another condition to check
+        - Switch: Execute the code from multiple expressions. it's work similar to if..else. it's ideal to use when
+                    long nested statements need to check.
+        - for(): Code of blocks to be execute for the fixed number of times repeatedly until some condition is satisfied.
+        - while(): Code of blocks to be execute until the condition is satidfied;
+        - do while(): Code of blocks to be execute at-least one whether condition is satisfied or not.
+        - return: Stop the execution of operation and return the result from fuction
+        - function(): Used to perform an operation. Can also use multiple time to save the time
+        */
+        // if..else..else if
+        var age = 21;
+        if (age >= 21) {
+            console.log("You are adult");
+        } else if (age >= 13 && age <= 19) {
+            console.log("You are teenager");
+        } else if (age >= 10 && age <= 12) {
+            console.log("You are tween");
+        } else if (age >= 6 && age <= 9) {
+            console.log("You are child");
+        } else if (age >= 3 && age <= 5) {
+            console.log("You are preschooler");
+        } else {
+            console.log("You are too small");
+        }
+
+        //Switch
+        var rating = 3;
+        switch (rating) {
+            case 5:
+                console.log("Exellent Service");
+                break;
+            case 4:
+                console.log("Best Service");
+                break;
+            case 3:
+                console.log("Good Service");
+                break;
+            case 2:
+                console.log("Somewhat Not Satisfied");
+                break;
+            case 1:
+                console.log("Poor Service");
+                break;
+            default:
+                console.log("No Ratings Provided");
+                break;
+        }
+
+        //For
+        var forFruits = new Array("Banana", "Kiwi", "Mango", "Orange", "Apple");
+        var forStudents = [
+            ["John", 25, "F"],
+            ["Mery", 16, "F"],
+            ["Robert", 32, "F"],
+            ["Anil", 33, "F"],
+            ["Don", 22, "F"]
+        ];
+
+        for (var i = 0; i < 10; i++) {
+            console.log((i + 1) + ") Hello World")
+        }
+
+        for (var i = 0; i < forFruits.length; i++) {
+            console.log(forFruits[i]);
+        }
+
+        for (var i = 0; i < forStudents.length; i++) {
+            console.log("name: " + forStudents[i][0] + " - Roll No: " + forStudents[i][1] + " - Division: " +
+                forStudents[i][2]);
+        }
+
+        //While
+        var i = 0;
+        while (i < forFruits.length) {
+            console.log("Fruits: " + forFruits[i]);
+            i++;
+        }
+        while (i < forStudents.length) {
+            console.log("Students Name: " + forStudents[i][0]);
+            i++;
+        }
+
+        //Do While
+        var no = 1;
+        do {
+            console.log("Value is: " + no);
+            no++;
+        } while (no < 2);
+
+        //Function  and Return
+        function ratingMsg(star) {
+            var msg = "";
+            if (star == 5) msg = "Exellent Service";
+            else if (star == 4) msg = "Best Service";
+            else if (star == 3) msg = "Good Service";
+            else if (star == 2) msg = "Somewhat Not Satisfied";
+            else if (star == 1) msg = "Poor Service";
+            else msg == "No Rating Provided";
+
+            return msg;
+        }
+        var userRating = ratingMsg(5);
+        console.log(userRating);
+
+        /*
+        Section 13 : Events
+        */
+        /*
+        Event Name                     Description
+        onclick: Event fired when user click on HTML element
+        onchange: Event fired when HTML element change
+        onmouseover: Event fired when cursor (mouse pointer) moves over an element
+        onmouseout: Event fired when cursor (mouse pointer) leave an element
+        onload: Event fired when the document loads
+        onkeydown: Event fired  when key pressed from keyboard
+        onkeypress: Event fired when key pressed from keyboard and release.
+                    Event can't fired if press ESC, ALT, Shift etc key
+        onkeyup: Event fired when key released
+        onblur: Event fired when focus loses from element
+        onfocus: Event fired when element gets focus
+        */
     </script>
 </head>
 
